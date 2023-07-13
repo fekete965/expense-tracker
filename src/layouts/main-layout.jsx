@@ -4,6 +4,7 @@ import { fetchData } from "../components/helper"
 import '../styles/main-layout.css';
 import NavBar from '../components/navbar';
 
+
 export function MainLoader() {
 
     const username = fetchData('userName');
@@ -21,8 +22,6 @@ export default function Main() {
                 <Outlet />
             </main>
         </div>
-
-
 
     )
 }

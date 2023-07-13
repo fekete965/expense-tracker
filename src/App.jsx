@@ -3,8 +3,8 @@ import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider } 
 
 //pages
 import Error from './pages/error';
-import { logoutAction } from './pages/logged-out';
-import Dashboard, { dashboardLoader } from './pages/dashboard';
+import Logout, { logoutAction } from './pages/logout';
+import Dashboard, { dashboardAction, dashboardLoader } from './pages/dashboard';
 
 //layout
 import Main, { MainLoader } from './layouts/main-layout';
@@ -19,9 +19,10 @@ function App() {
     createRoutesFromElements(
 
       <Route path='/' element={<Main />} loader={MainLoader}>
-        <Route index element={<Dashboard />} loader={dashboardLoader} />
-        <Route path='logout' action={logoutAction} />
+        <Route index element={<Dashboard />} loader={dashboardLoader} action={dashboardAction} />
+        <Route path='logout' element={<Logout />} action={logoutAction} />
         <Route path='*' element={<Error />} />
+
       </Route>
 
     )

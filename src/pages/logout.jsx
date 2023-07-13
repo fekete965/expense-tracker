@@ -12,9 +12,9 @@ export async function logoutAction() {
 }
 
 
-const LoggedOut = () => {
+const Logout = () => {
     return (
         <div>LoggedOut</div>
     )
 }
-export default LoggedOut
+export default Logout

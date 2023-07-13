@@ -9,3 +9,8 @@ export const deleteItem = ({ key }) => {
     return localStorage.removeItem(key)
 
 }
+
+//set item 
+export const setItem = ({ key, value }) => {
+    localStorage.setItem(key, value);
+}

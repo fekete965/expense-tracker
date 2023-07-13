@@ -1,0 +1,53 @@
+.intro {
+    display: flex;
+    flex-direction: column;
+    max-width: 1600px;
+    margin: 3rem 0 0 3rem;
+    width: 100%;
+}
+ span {
+    display: block;
+    color: black;
+    margin: 0;
+  }
+
+  h1 {
+    color: var(--text-highlight);
+  }
+ 
+.intro-form {
+    margin-left: 0;
+}
+
+.intro-form input {
+    padding: 10px 20px;
+    width: 30%;
+    margin-bottom: 2rem;
+    border: 1px solid black;
+  }
+
+  
+ .btn {
+    border: none;
+    border-radius: 7px;
+    background-color: black ;
+    color: whitesmoke;
+    text-transform: uppercase;
+    padding: 15px 5px;
+    width: 30%;
+  }
+
+ main {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    align-items: center;
+
+  }
+
+main img {
+    width: 50%;
+    margin-top: 3rem;
+ 
+  }
+  
