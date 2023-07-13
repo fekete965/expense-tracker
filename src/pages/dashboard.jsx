@@ -1,5 +1,8 @@
 import { useLoaderData } from "react-router-dom";
 
+//styles
+import '../styles/dashboard.css';
+
 //  helper functions
 import { fetchData, setItem } from "../components/helper"
 
@@ -7,11 +10,13 @@ import { fetchData, setItem } from "../components/helper"
 //components
 import Intro from "../components/intro";
 import { toast } from "react-toastify";
+// import AddBudgetForm from "../components/addBudgetForm";
 
 
 // loader
 export function dashboardLoader() {
     const userName = fetchData("userName");
+    // const budget = fetchData("budget");
     return { userName }
 }
 
@@ -36,8 +41,9 @@ const Dashboard = () => {
     const { userName } = useLoaderData()
 
     return (
-        <div>
-            {userName ? (<h2> {userName}</h2>) : <Intro />}
+        <div className="dashboard">
+            {userName ? (<h2> Welcome Back, {userName} </h2>) : <Intro />}
+            {/* <AddBudgetForm /> */}
         </div>
     )
 }

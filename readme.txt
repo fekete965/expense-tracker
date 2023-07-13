@@ -12,3 +12,7 @@
 ## Challenges :
     - painstakingly difficult to establish the same design for elements throughout the application. In dire need of UI library
     - 
+
+## Local Storage :
+    - Save username, budget, expense
+
