@@ -1,7 +1,6 @@
 import { useLoaderData, Outlet } from "react-router-dom";
 import { fetchData } from "../components/helper"
 
-import '../styles/main-layout.css';
 import NavBar from '../components/navbar';
 
 

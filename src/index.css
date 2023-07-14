@@ -2,11 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap');
 
 :root {
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.5;
-  font-weight: 500;
-  font-size: 16px;
-
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -14,6 +9,13 @@
   font-kerning: auto;
 
   --text-highlight : #00BFA6;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
+  font-weight: 500;
+  
 }
 
 body,h1,h2,h3,p {
@@ -28,3 +30,42 @@ h1 {
 p {
   font-size: 0.9rem;
 }
+
+
+/* form styles */
+
+.form-wrapper {
+  border: dashed;
+  padding: 2.5rem;
+  color: black;
+  margin: 1rem 2rem 2rem 1rem;
+  width: 100%;
+  
+}
+
+.form-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-data {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.btn {
+    border: none;
+    border-radius: 7px;
+    background-color: black ;
+    color: whitesmoke;
+    text-transform: uppercase;
+    padding: 15px 5px;
+    margin-top: 1rem;
+  }
+
+  input {
+    padding: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid black;
+  }

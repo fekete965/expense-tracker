@@ -14,6 +14,7 @@ export default function Intro() {
                 <Form className='intro intro-form' method='post' >
                     <input type="text" name="userName" id="userName" placeholder="What's your name?" required />
                     <button className='btn create-btn' type="submit">Create Account</button>
+                    <input type="hidden" name="_action" value="newUser" />
                 </Form>
             </div>
             <img src="investment.svg" alt="person with chart" aria-label='Investment' />

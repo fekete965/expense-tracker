@@ -19,23 +19,6 @@
     margin-left: 0;
 }
 
-.intro-form input {
-    padding: 10px 20px;
-    width: 30%;
-    margin-bottom: 2rem;
-    border: 1px solid black;
-  }
-
-  
- .btn {
-    border: none;
-    border-radius: 7px;
-    background-color: black ;
-    color: whitesmoke;
-    text-transform: uppercase;
-    padding: 15px 5px;
-    width: 30%;
-  }
 
  main {
     display: flex;

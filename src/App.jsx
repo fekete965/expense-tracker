@@ -7,7 +7,7 @@ import Logout, { logoutAction } from './pages/logout';
 import Dashboard, { dashboardAction, dashboardLoader } from './pages/dashboard';
 
 //layout
-import Main, { MainLoader } from './layouts/main-layout';
+import Main, { MainLoader } from './layouts/mainLayout';
 
 // library
 import { ToastContainer } from 'react-toastify';
@@ -21,8 +21,8 @@ function App() {
       <Route path='/' element={<Main />} loader={MainLoader}>
         <Route index element={<Dashboard />} loader={dashboardLoader} action={dashboardAction} />
         <Route path='logout' element={<Logout />} action={logoutAction} />
-        <Route path='*' element={<Error />} />
 
+        <Route path='*' element={<Error />} />
       </Route>
 
     )
