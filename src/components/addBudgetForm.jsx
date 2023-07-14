@@ -16,6 +16,8 @@ export default function AddBudgetForm() {
 
                     <button className='btn' type="submit"> Create Budget </button>
                 </div>
+                <input type="hidden" name="_action" value="createBudget" />
+
             </Form>
 
         </div>
