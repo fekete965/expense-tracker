@@ -1,11 +1,12 @@
 //  helper functions
-import { createBudget, fetchData, setItem } from "../components/helper";
+import { createBudget, fetchData, setItem, deleteItem } from "./helper";
 import { toast } from "react-toastify";
 import { redirect } from "react-router-dom";
-import { deleteItem } from "../components/helper";
 
 export async function dashboardAction({ request }) {
   const data = await request.formData();
+  console.log(data);
+
   const { _action, ...values } = Object.fromEntries(data);
   console.log(values);
 
@@ -23,13 +24,20 @@ export async function dashboardAction({ request }) {
     } catch (e) {
       throw new Error("Problem creating the budget");
     }
+  } else if (_action === "expenseForm") {
+    try {
+      console.log("expense try");
+    } catch (e) {
+      console.log("expense catch");
+    }
   }
 }
 
 export function dashboardLoader() {
   const userName = fetchData("userName");
-  // const budget = fetchData("budget");
-  return { userName };
+  const budget = fetchData("budget");
+
+  return { userName, budget };
 }
 
 export async function logoutAction() {

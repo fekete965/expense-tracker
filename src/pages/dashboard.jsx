@@ -6,15 +6,26 @@ import "../styles/dashboard.css";
 //components
 import Intro from "../components/intro";
 import AddBudgetForm from "../components/addBudgetForm";
+import ExpenseForm from "../components/expenseForm";
 
 const Dashboard = () => {
-  const { userName } = useLoaderData();
+  const { userName, budget } = useLoaderData();
+  console.log(budget);
 
   return (
-    <div className="dashboard">
-      {userName ? <h2> Welcome Back, {userName} </h2> : <Intro />}
-      <AddBudgetForm />
-    </div>
+    <main>
+      {userName ? (
+        <div className="dashboard">
+          <h2> Welcome Back, {userName} </h2>
+          <div className="dashboard-content">
+            <AddBudgetForm />
+            {budget ? <ExpenseForm /> : ""}
+          </div>
+        </div>
+      ) : (
+        <Intro />
+      )}
+    </main>
   );
 };
 export default Dashboard;
