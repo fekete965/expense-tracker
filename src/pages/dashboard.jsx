@@ -19,7 +19,7 @@ const Dashboard = () => {
           <h2> Welcome Back, {userName} </h2>
           <div className="dashboard-content">
             <AddBudgetForm />
-            {budget ? <ExpenseForm /> : ""}
+            {budget ? <ExpenseForm budget={budget} /> : ""}
           </div>
         </div>
       ) : (

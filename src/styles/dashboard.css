@@ -1,0 +1,10 @@
+/* dashboard content */
+.dashboard {
+  max-width: 100%;
+}
+.dashboard-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+}

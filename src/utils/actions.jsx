@@ -1,5 +1,11 @@
 //  helper functions
-import { createBudget, fetchData, setItem, deleteItem } from "./helper";
+import {
+  createBudget,
+  fetchData,
+  setItem,
+  deleteItem,
+  createExpense,
+} from "./helper";
 import { toast } from "react-toastify";
 import { redirect } from "react-router-dom";
 
@@ -17,18 +23,26 @@ export async function dashboardAction({ request }) {
     } catch (e) {
       throw new Error("Problem creating account");
     }
-  } else if (_action === "createBudget") {
+  }
+  if (_action === "createBudget") {
     try {
       createBudget({ name: values.newBudget, amount: values.budgetAmount });
       return toast.success("Budget is created");
     } catch (e) {
       throw new Error("Problem creating the budget");
     }
-  } else if (_action === "expenseForm") {
+  }
+
+  if (_action === "createExpense") {
+    console.log("inside expense action ");
     try {
-      console.log("expense try");
+      createExpense({
+        name: values.newExpense,
+        amount: values.expenseAmount,
+      });
+      return toast.success("expense created ");
     } catch (e) {
-      console.log("expense catch");
+      throw new Error("Problem creating expense");
     }
   }
 }
@@ -36,8 +50,9 @@ export async function dashboardAction({ request }) {
 export function dashboardLoader() {
   const userName = fetchData("userName");
   const budget = fetchData("budget");
+  const expense = fetchData("expense");
 
-  return { userName, budget };
+  return { userName, budget, expense };
 }
 
 export async function logoutAction() {
