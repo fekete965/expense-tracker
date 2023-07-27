@@ -43,8 +43,8 @@ export const createExpense = ({ name, amount }) => {
   };
 
   const existingExpense = fetchData("expense") ?? [];
-  return localStorage.setItem([
+  return localStorage.setItem(
     "expense",
-    JSON.stringify([...existingExpense, newItem]),
-  ]);
+    JSON.stringify([...existingExpense, newItem])
+  );
 };

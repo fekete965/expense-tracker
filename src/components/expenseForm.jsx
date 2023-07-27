@@ -7,6 +7,7 @@ function ExpenseForm({ budget }) {
 
   const formRef = useRef();
   const inputRef = useRef();
+  console.log(budget.length);
 
   useEffect(() => {
     if (!isSubmitting) {
@@ -48,7 +49,7 @@ function ExpenseForm({ budget }) {
               required
             />
           </div>
-          <div className="form-input" hidden={budget.length === 1}>
+          <div className="form-input">
             <label htmlFor="expenseCategory"> Budget category </label>
             <select name="expenseCategory" id="expenseCategory" required>
               {budget
@@ -57,7 +58,6 @@ function ExpenseForm({ budget }) {
                 .map((budget) => {
                   return (
                     <option key={budget.id} value={budget.id}>
-                      {" "}
                       {budget.name}
                     </option>
                   );

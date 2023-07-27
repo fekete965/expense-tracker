@@ -21,25 +21,27 @@ export default function AddBudgetForm() {
 
       <fetcher.Form method="post" ref={formRef}>
         <div className="form-data">
-          <label htmlFor="newBudget">Budget Name</label>
-          <input
-            type="text"
-            name="newBudget"
-            id="newBudget"
-            placeholder="Groceries"
-            required
-            ref={inputRef}
-          />
-
-          <label htmlFor="budgetAmount">Amount</label>
-          <input
-            type="number"
-            name="budgetAmount"
-            id="budgetAmount"
-            placeholder="$200"
-            required
-          />
-
+          <div className="form-input">
+            <label htmlFor="newBudget">Budget Name</label>
+            <input
+              type="text"
+              name="newBudget"
+              id="newBudget"
+              placeholder="Groceries"
+              required
+              ref={inputRef}
+            />
+          </div>
+          <div className="form-input">
+            <label htmlFor="budgetAmount">Amount</label>
+            <input
+              type="number"
+              name="budgetAmount"
+              id="budgetAmount"
+              placeholder="$200"
+              required
+            />
+          </div>
           <button className="btn" type="submit" disabled={isSubmitting}>
             {" "}
             Create Budget{" "}

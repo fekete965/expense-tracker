@@ -47,11 +47,6 @@ p {
   margin-bottom: 0.5rem;
 }
 
-.form-data {
-  display: flex;
-  flex-direction: column;
-}
-
 .form-input {
   width: 100%;
   display: flex;
