@@ -7,6 +7,7 @@
   -moz-osx-font-smoothing: grayscale;
   font-kerning: auto;
   --text-highlight: #00bfa6;
+  --option1: #809bce;
 }
 
 body {
@@ -19,6 +20,7 @@ body,
 h1,
 h2,
 h3,
+h4,
 p {
   margin: 0;
   padding: 0;

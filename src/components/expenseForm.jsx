@@ -53,7 +53,7 @@ function ExpenseForm({ budget }) {
             <label htmlFor="expenseCategory"> Budget category </label>
             <select name="expenseCategory" id="expenseCategory" required>
               {budget
-                .sort((a, b) => a.date - b.date)
+                .sort((a, b) => a.createdAt - b.createdAt)
                 // (a, b) => (a.name !== b.name ? (a.name < b.name ? -1 : 1) : 0) // ordering alphabets
                 .map((budget) => {
                   return (

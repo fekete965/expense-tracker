@@ -1,10 +1,37 @@
+@import "../index.css";
+
 /* dashboard content */
 .dashboard {
-  width: 100%;
+  background-color: lightslategray;
+  margin: 2rem;
+  margin: 0 auto;
 }
 
 .content {
-  background-color: aquamarine;
+  background-color: #84b6f4;
   max-width: 100%;
   display: flex;
+}
+
+/* Budget cards */
+.budgets {
+  max-width: 100%;
+  background-color: #f7cae4;
+}
+.budget-card {
+  border: 2px solid var(--option1);
+  border-radius: 15px;
+  padding: 1rem;
+  margin: 2rem;
+  background-color: #d3bcf6;
+  width: 70%;
+}
+
+.budget-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+progress {
+  width: 50%;
 }
