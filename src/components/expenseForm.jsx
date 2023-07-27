@@ -49,7 +49,7 @@ function ExpenseForm({ budget }) {
               required
             />
           </div>
-          <div className="form-input">
+          <div className="form-input" hidden={budget.length === 1}>
             <label htmlFor="expenseCategory"> Budget category </label>
             <select name="expenseCategory" id="expenseCategory" required>
               {budget

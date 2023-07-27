@@ -17,9 +17,19 @@ const Dashboard = () => {
       {userName ? (
         <div className="dashboard">
           <h2> Welcome Back, {userName} </h2>
-          <div className="dashboard-content">
-            <AddBudgetForm />
-            {budget.length > 0 ? <ExpenseForm budget={budget} /> : ""}
+          <div>
+            {budget && budget.length > 0 ? (
+              <div className="content">
+                <AddBudgetForm />
+                <ExpenseForm budget={budget} />
+              </div>
+            ) : (
+              <div className="content">
+                <p> Personal budgeting is the key</p>
+                <p>Create a budget to get started!</p>
+                <AddBudgetForm />
+              </div>
+            )}
           </div>
         </div>
       ) : (

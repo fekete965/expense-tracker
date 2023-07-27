@@ -1,11 +1,10 @@
 /* dashboard content */
 .dashboard {
   width: 100%;
-  background-color: cadetblue;
 }
-.dashboard-content {
+
+.content {
+  background-color: aquamarine;
+  max-width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 30px;
-  width: 100%;
 }
