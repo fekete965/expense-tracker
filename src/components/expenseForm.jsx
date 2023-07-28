@@ -49,21 +49,23 @@ function ExpenseForm({ budget }) {
               required
             />
           </div>
-          <div className="form-input" hidden={budget.length === 1}>
-            <label htmlFor="expenseCategory"> Budget category </label>
-            <select name="expenseCategory" id="expenseCategory" required>
-              {budget
-                .sort((a, b) => a.createdAt - b.createdAt)
-                // (a, b) => (a.name !== b.name ? (a.name < b.name ? -1 : 1) : 0) // ordering alphabets
-                .map((budget) => {
-                  return (
-                    <option key={budget.id} value={budget.id}>
-                      {budget.name}
-                    </option>
-                  );
-                })}
-            </select>
-          </div>
+          {budget.length <= 1 ? null : (
+            <div className="form-input" >
+              <label htmlFor="expenseCategory"> Budget category </label>
+              <select name="expenseCategory" id="expenseCategory" required>
+                {budget
+                  .sort((a, b) => a.createdAt - b.createdAt)
+                  // (a, b) => (a.name !== b.name ? (a.name < b.name ? -1 : 1) : 0) // ordering alphabets
+                  .map((budget) => {
+                    return (
+                      <option key={budget.id} value={budget.id}>
+                        {budget.name}
+                      </option>
+                    );
+                  })}
+              </select>
+            </div>
+          )}
 
           <button className="btn" type="submit" disabled={isSubmitting}>
             Add expense{" "}
