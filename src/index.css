@@ -78,3 +78,7 @@ span {
 .main-layout {
   max-width: 100%;
 }
+
+.hide-me {
+  display: none;
+}

@@ -1,6 +1,10 @@
 import { useEffect, useRef } from "react";
 import { useFetcher } from "react-router-dom";
 
+const composeClassName = (listOfClasses) => {
+  return listOfClasses.filter(Boolean).join(" ")
+}
+
 function ExpenseForm({ budget }) {
   const fetcher = useFetcher();
   const isSubmitting = fetcher.state === "submitting";
@@ -15,6 +19,11 @@ function ExpenseForm({ budget }) {
       inputRef.current.focus();
     }
   }, [isSubmitting]);
+
+  const budgetDropdownClass = composeClassName([
+    "form-input",
+    budget.length <= 1 ? 'hide-me' : null,
+  ])
 
   return (
     <div className="form-wrapper">
@@ -49,23 +58,21 @@ function ExpenseForm({ budget }) {
               required
             />
           </div>
-          {budget.length <= 1 ? null : (
-            <div className="form-input" >
-              <label htmlFor="expenseCategory"> Budget category </label>
-              <select name="expenseCategory" id="expenseCategory" required>
-                {budget
-                  .sort((a, b) => a.createdAt - b.createdAt)
-                  // (a, b) => (a.name !== b.name ? (a.name < b.name ? -1 : 1) : 0) // ordering alphabets
-                  .map((budget) => {
-                    return (
-                      <option key={budget.id} value={budget.id}>
-                        {budget.name}
-                      </option>
-                    );
-                  })}
-              </select>
-            </div>
-          )}
+          <div className={budgetDropdownClass}>
+            <label htmlFor="expenseCategory"> Budget category </label>
+            <select name="expenseCategory" id="expenseCategory" required>
+              {budget
+                .sort((a, b) => a.createdAt - b.createdAt)
+                // (a, b) => (a.name !== b.name ? (a.name < b.name ? -1 : 1) : 0) // ordering alphabets
+                .map((budget) => {
+                  return (
+                    <option key={budget.id} value={budget.id}>
+                      {budget.name}
+                    </option>
+                  );
+                })}
+            </select>
+          </div>
 
           <button className="btn" type="submit" disabled={isSubmitting}>
             Add expense{" "}
